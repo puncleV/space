@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] float xPadding = 1f;
     [SerializeField] float yPadding = 0.5f;
     [SerializeField] GameObject lazerPrefab;
+    [SerializeField] float baseLazerSpeed = 10f;
 
     float maxX;
     float minX;
@@ -23,6 +24,17 @@ public class Player : MonoBehaviour
     void Update()
     {
         move();
+        fire();
+    }
+
+    private void fire()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            var shotPosition = new Vector3(transform.position.x, transform.position.y + yPadding, transform.position.z);
+            var shot = Instantiate(lazerPrefab, shotPosition, Quaternion.identity);
+            shot.GetComponent<Rigidbody2D>().velocity = new Vector2(0, baseLazerSpeed);
+        }
     }
 
     private void setUpWorldBoundaries ()
