@@ -5,7 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] float speed = 10f;
-
+    [SerializeField] float xPadding = 1f;
+    [SerializeField] float yPadding = 1f;
     float maxX;
     float minX;
     float maxY;
@@ -43,7 +44,7 @@ public class Player : MonoBehaviour
         var deltaX = Input.GetAxis("Horizontal");
         var newXPos = transform.position.x + deltaX * Time.deltaTime * speed;
 
-        return Mathf.Clamp(newXPos, minX, maxX);
+        return Mathf.Clamp(newXPos, minX + xPadding, maxX - xPadding);
     }
 
     private float getNewYPos()
@@ -51,7 +52,7 @@ public class Player : MonoBehaviour
         var deltaY = Input.GetAxis("Vertical");
         var newYPos = transform.position.y + deltaY * Time.deltaTime * speed;
 
-        return Mathf.Clamp(newYPos, minY, maxY);
+        return Mathf.Clamp(newYPos, minY + yPadding, maxY - yPadding);
     }
 
 }
