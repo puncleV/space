@@ -9,16 +9,21 @@ public class Player : MonoBehaviour
     [SerializeField] float yPadding = 0.5f;
     [SerializeField] GameObject lazerPrefab;
     [SerializeField] float baseLazerSpeed = 10f;
+    [SerializeField] float autoshootIUnterval = 0.5f;
 
     float maxX;
     float minX;
     float maxY;
     float minY;
+
+    Coroutine fieringCoroutine;
     // Start is called before the first frame update
     void Start()
     {
         setUpWorldBoundaries();
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -27,15 +32,33 @@ public class Player : MonoBehaviour
         fire();
     }
 
-    private void fire()
+    private void fire ()
     {
-        if (Input.GetButtonDown("Fire1"))
+
+        if (Input.GetButtonDown("Fire1") && fieringCoroutine == null)
+        {
+            fieringCoroutine = StartCoroutine(autoFire());
+        }
+
+        if (Input.GetButtonUp("Fire1") && fieringCoroutine != null)
+        {
+            StopCoroutine(fieringCoroutine);
+            fieringCoroutine = null;
+        }
+    }
+
+    private IEnumerator autoFire()
+    {
+        while (true)
         {
             var shotPosition = new Vector3(transform.position.x, transform.position.y + yPadding, transform.position.z);
             var shot = Instantiate(lazerPrefab, shotPosition, Quaternion.identity);
             shot.GetComponent<Rigidbody2D>().velocity = new Vector2(0, baseLazerSpeed);
+
+            yield return new WaitForSeconds(autoshootIUnterval);
         }
     }
+
 
     private void setUpWorldBoundaries ()
     {
