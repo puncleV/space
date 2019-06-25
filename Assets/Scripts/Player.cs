@@ -5,7 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] float speed = 10f;
-     float maxX;
+
+    float maxX;
     float minX;
     float maxY;
     float minY;
