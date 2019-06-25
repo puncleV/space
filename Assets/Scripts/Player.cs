@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     [SerializeField] float speed = 10f;
     [SerializeField] float xPadding = 1f;
     [SerializeField] float yPadding = 0.5f;
+    [SerializeField] Lazer lazer;
+
     float maxX;
     float minX;
     float maxY;
