@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] float speed = 10f;
     [SerializeField] float xPadding = 1f;
-    [SerializeField] float yPadding = 1f;
+    [SerializeField] float yPadding = 0.5f;
     float maxX;
     float minX;
     float maxY;
@@ -27,11 +27,11 @@ public class Player : MonoBehaviour
     {
         Camera gameCamera = Camera.main;
 
-        maxX = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x;
-        minX = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x;
+        maxX = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - xPadding;
+        minX = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + xPadding;
 
-        maxY = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y;
-        minY = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y;
+        maxY = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - yPadding;
+        minY = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + yPadding;
     }
 
     private void move()
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
         var deltaX = Input.GetAxis("Horizontal");
         var newXPos = transform.position.x + deltaX * Time.deltaTime * speed;
 
-        return Mathf.Clamp(newXPos, minX + xPadding, maxX - xPadding);
+        return Mathf.Clamp(newXPos, minX, maxX);
     }
 
     private float getNewYPos()
@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
         var deltaY = Input.GetAxis("Vertical");
         var newYPos = transform.position.y + deltaY * Time.deltaTime * speed;
 
-        return Mathf.Clamp(newYPos, minY + yPadding, maxY - yPadding);
+        return Mathf.Clamp(newYPos, minY, maxY);
     }
 
 }
