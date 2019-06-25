@@ -95,4 +95,5 @@ MonoBehaviour:
   speed: 10
   xPadding: 1
   yPadding: 0.5
-  lazer: {fileID: 672337081189574354, guid: b937b7e3ac6fb7a40b5becfd9587885e, type: 3}
+  lazerPrefab: {fileID: 7814146037449326059, guid: b937b7e3ac6fb7a40b5becfd9587885e,
+    type: 3}
