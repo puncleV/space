@@ -640,5 +640,10 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[4]
       value: 
       objectReference: {fileID: 375328895}
+    - target: {fileID: 1786344093559265516, guid: e9abf0a33e950b74682e068a0c42d014,
+        type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9abf0a33e950b74682e068a0c42d014, type: 3}

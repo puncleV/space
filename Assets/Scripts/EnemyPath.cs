@@ -16,14 +16,20 @@ public class EnemyPath : MonoBehaviour
 
     private void Update()
     {
+        move();
+    }
+
+    private void move()
+    {
         Vector2 targetPosition = waypoints[targetWaypointIndex].transform.position;
 
-        if (Vector2.Distance(transform.position, targetPosition) < 0.05)
+        if (transform.position.Equals(targetPosition))
         {
             if (targetWaypointIndex == (waypoints.Count - 1))
             {
                 Destroy(gameObject);
-            } else
+            }
+            else
             {
                 targetWaypointIndex++;
             }
