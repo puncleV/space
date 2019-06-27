@@ -105,11 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693ea650afbb3694b958427332bc7956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  speed: 0.15
+  waveConfig: {fileID: 11400000, guid: 76e7731660ed2ca48b1b6212ac5c6949, type: 2}
+  speed: 5
   targetWaypointIndex: 0
