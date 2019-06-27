@@ -563,12 +563,12 @@ PrefabInstance:
     - target: {fileID: 7626794114950735343, guid: e9abf0a33e950b74682e068a0c42d014,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.12
+      value: 8.56
       objectReference: {fileID: 0}
     - target: {fileID: 7626794114950735343, guid: e9abf0a33e950b74682e068a0c42d014,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.91
+      value: 12.14
       objectReference: {fileID: 0}
     - target: {fileID: 7626794114950735343, guid: e9abf0a33e950b74682e068a0c42d014,
         type: 3}
@@ -645,5 +645,11 @@ PrefabInstance:
       propertyPath: speed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1786344093559265516, guid: e9abf0a33e950b74682e068a0c42d014,
+        type: 3}
+      propertyPath: waveConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 76e7731660ed2ca48b1b6212ac5c6949,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9abf0a33e950b74682e068a0c42d014, type: 3}
