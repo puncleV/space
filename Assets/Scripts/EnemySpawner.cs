@@ -7,37 +7,40 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] List<WaveConfig> waveConfigs;
     [SerializeField] int startWave = 0;
     int currentWaveIndex;
-    Coroutine spawnCoroutine = null;
     // Start is called before the first frame update
     void Start()
     {
         currentWaveIndex = startWave;
+        StartCoroutine(startWaves());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (spawnCoroutine == null)
+    }
+
+    private IEnumerator startWaves ()
+    {
+        while(true)
         {
-            spawnCoroutine = StartCoroutine(spawnEnemies());
+            var currentWave = waveConfigs[currentWaveIndex];
+
+            yield return StartCoroutine(spawnEnemies(currentWave));
+
+            currentWaveIndex = (currentWaveIndex == waveConfigs.Count - 1) ? 0 : currentWaveIndex + 1;
         }
     }
 
-    private IEnumerator spawnEnemies ()
+    private IEnumerator spawnEnemies (WaveConfig wave)
     {
         var currentWave = waveConfigs[currentWaveIndex];
 
-        for (int i = 0; i < currentWave.EnemiesCount; i++)
+        for (int i = 0; i < wave.EnemiesCount; i++)
         { 
-            var newEnemy = Instantiate(currentWave.EnemyPrefab, currentWave.getWaypoints()[0].position, Quaternion.identity);
+            var newEnemy = Instantiate(wave.EnemyPrefab, wave.getWaypoints()[0].position, Quaternion.identity);
             newEnemy.GetComponent<EnemyPath>().setWaveConfig(currentWave);
 
-            yield return new WaitForSeconds(currentWave.TimeBetweenSpawns);
+            yield return new WaitForSeconds(wave.TimeBetweenSpawns);
         }
-
-        currentWaveIndex = (currentWaveIndex == waveConfigs.Count - 1) ? 0 : currentWaveIndex + 1;
-
-        StopCoroutine(spawnCoroutine);
-        spawnCoroutine = null;
     }
 }
