@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7814146037449326056}
   - component: {fileID: 672337081189574354}
   - component: {fileID: 5181970240554082950}
+  - component: {fileID: 6419085788222756858}
   m_Layer: 0
   m_Name: Lazer
   m_TagString: Untagged
@@ -131,3 +132,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6419085788222756858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814146037449326059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a64953de7135bef4fa053bbe2bc353ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
