@@ -95,6 +95,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  minTimeBetweenShots: 0.1
+  maxTimeBetweenShots: 3
+  baseLazerSpeed: 10
+  lazerPrefab: {fileID: 7814146037449326059, guid: 10b5a454ea05624428aa2ea693fdc05f,
+    type: 3}
 --- !u!114 &1786344093559265516
 MonoBehaviour:
   m_ObjectHideFlags: 0
