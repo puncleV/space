@@ -1,12 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Player")]
     [SerializeField] float speed = 10f;
     [SerializeField] float xPadding = 1f;
     [SerializeField] float yPadding = 0.5f;
+    
+    [Header("Projectile")]
     [SerializeField] GameObject lazerPrefab;
     [SerializeField] float baseLazerSpeed = 10f;
     [SerializeField] float autoshootIUnterval = 0.5f;
