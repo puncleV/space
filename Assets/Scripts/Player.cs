@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -9,6 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] float speed = 10f;
     [SerializeField] float xPadding = 1f;
     [SerializeField] float yPadding = 0.5f;
+    [SerializeField] int health = 100;
     
     [Header("Projectile")]
     [SerializeField] GameObject lazerPrefab;
@@ -34,6 +33,25 @@ public class Player : MonoBehaviour
     {
         move();
         fire();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag(Enemy.LASER_TAG))
+        {
+            handleHit(other.GetComponent<DamageDealer>());
+        }
+    }
+    
+    private void handleHit(DamageDealer damageDealer)
+    {
+        health -= damageDealer.Damage;
+
+        if (health <= 0)
+        {
+            StopAllCoroutines();
+            Destroy(gameObject);
+        }
     }
 
     private void fire ()
