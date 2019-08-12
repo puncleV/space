@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public static string LAZER_TAG = "enemy_laser";
+    
     [SerializeField] int health = 100;
     [SerializeField] float minTimeBetweenShots = 0.1f;
     [SerializeField] float maxTimeBetweenShots = 1f;
@@ -37,8 +39,8 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         DamageDealer damageDealer = collider.gameObject.GetComponent<DamageDealer>();
-        Debug.Log(damageDealer.tag);
-        if (damageDealer.tag != "enemy_lazer")
+
+        if (!damageDealer.CompareTag(LAZER_TAG))
         {
             handleHit(damageDealer);
         }
