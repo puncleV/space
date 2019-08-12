@@ -101,6 +101,8 @@ MonoBehaviour:
   baseLazerSpeed: 10
   lazerPrefab: {fileID: 7814146037449326059, guid: 10b5a454ea05624428aa2ea693fdc05f,
     type: 3}
+  explosionPrefab: {fileID: 7056840774447532185, guid: 0ffd0893f79e92f49ae63cf3a1c31992,
+    type: 3}
 --- !u!114 &1786344093559265516
 MonoBehaviour:
   m_ObjectHideFlags: 0

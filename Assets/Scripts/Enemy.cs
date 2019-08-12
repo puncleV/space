@@ -8,7 +8,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] float maxTimeBetweenShots = 1f;
     [SerializeField] float baseLazerSpeed = 10f;
     [SerializeField] GameObject lazerPrefab;
-
+    [SerializeField] GameObject explosionPrefab;
+    [SerializeField] private float explosionLifetime = 0.5f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -53,8 +55,21 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            StopAllCoroutines();
-            Destroy(gameObject);
+            die();
         }
+    }
+
+    private void die()
+    {
+        explode();
+        StopAllCoroutines();
+        Destroy(gameObject);
+    }
+
+    private void explode()
+    {
+        var explosionPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        var explosion = Instantiate(explosionPrefab, explosionPosition, Quaternion.identity);
+        Destroy(explosion, explosionLifetime);
     }
 }
