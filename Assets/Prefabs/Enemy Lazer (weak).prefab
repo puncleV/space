@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 672337081189574354}
   - component: {fileID: 5181970240554082950}
   - component: {fileID: 6419085788222756858}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy Lazer (weak)
   m_TagString: enemy_laser
   m_Icon: {fileID: 0}

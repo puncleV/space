@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // todo maybe there is a better place for this
-    public static readonly string LASER_TAG = "enemy_laser";
-    
     [SerializeField] int health = 100;
     [SerializeField] float minTimeBetweenShots = 0.1f;
     [SerializeField] float maxTimeBetweenShots = 1f;
@@ -40,10 +37,7 @@ public class Enemy : MonoBehaviour
     {
         DamageDealer damageDealer = collider.gameObject.GetComponent<DamageDealer>();
 
-        if (!damageDealer.CompareTag(LASER_TAG))
-        {
-            handleHit(damageDealer);
-        }
+        handleHit(damageDealer);
     }
 
     private void handleHit(DamageDealer damageDealer)
