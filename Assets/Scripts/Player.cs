@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] float speed = 10f;
     [SerializeField] float xPadding = 1f;
     [SerializeField] float yPadding = 0.5f;
-    [SerializeField] int health = 100;
+    [SerializeField] int health = 300;
     
     [Header("Projectile")]
     [SerializeField] GameObject lazerPrefab;
