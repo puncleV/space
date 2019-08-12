@@ -37,13 +37,21 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        handleHit(other.GetComponent<DamageDealer>());
+        var damageDealer = other.GetComponent<DamageDealer>();
+        
+        if (!damageDealer)
+        {
+            return;
+        }
+        
+        handleHit(damageDealer);
     }
     
     private void handleHit(DamageDealer damageDealer)
     {
         health -= damageDealer.Damage;
 
+        damageDealer.hit();
         if (health <= 0)
         {
             StopAllCoroutines();

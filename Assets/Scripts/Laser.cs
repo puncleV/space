@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lazer : MonoBehaviour
+public class Laser : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

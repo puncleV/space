@@ -101,7 +101,7 @@ MonoBehaviour:
   lazerPrefab: {fileID: 7814146037449326059, guid: b937b7e3ac6fb7a40b5becfd9587885e,
     type: 3}
   baseLazerSpeed: 10
-  autoshootIUnterval: 0.5
+  autoshootIUnterval: 0.1
 --- !u!61 &519834188823521512
 BoxCollider2D:
   m_ObjectHideFlags: 0

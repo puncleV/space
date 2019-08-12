@@ -37,12 +37,19 @@ public class Enemy : MonoBehaviour
     {
         DamageDealer damageDealer = collider.gameObject.GetComponent<DamageDealer>();
 
+        if (!damageDealer)
+        {
+            return;
+        }
+
         handleHit(damageDealer);
     }
 
     private void handleHit(DamageDealer damageDealer)
     {
         health -= damageDealer.Damage;
+        
+        damageDealer.hit();
 
         if (health <= 0)
         {
