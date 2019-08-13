@@ -4,23 +4,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
-{
-    public void loadNextScene()
+{ 
+    public void mainMenu()
     {
-        int currentScene = SceneManager.GetActiveScene().buildIndex;
-
-        SceneManager.LoadScene(currentScene + 1);
-    }
-
-    public void loadStartScene()
-    {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Main Menu");
 
     }
 
-    public void failScreen()
+    public void game()
     {
-        SceneManager.LoadScene("FailScreen");
+        SceneManager.LoadScene("Game");
+    }
+    
+    public void gameOver()
+    {
+        SceneManager.LoadScene("Game Over");
     }
 
     public void quit()
