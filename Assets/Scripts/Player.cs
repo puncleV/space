@@ -8,11 +8,14 @@ public class Player : MonoBehaviour
     [SerializeField] float xPadding = 1f;
     [SerializeField] float yPadding = 0.5f;
     [SerializeField] int health = 300;
-    
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip shootingSound;
+
     [Header("Projectile")]
     [SerializeField] GameObject lazerPrefab;
     [SerializeField] float baseLazerSpeed = 10f;
     [SerializeField] float autoshootIUnterval = 0.5f;
+
 
     float maxX;
     float minX;
@@ -54,6 +57,7 @@ public class Player : MonoBehaviour
         damageDealer.hit();
         if (health <= 0)
         {
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
             StopAllCoroutines();
             Destroy(gameObject);
         }
@@ -78,6 +82,8 @@ public class Player : MonoBehaviour
     {
         while (true)
         {
+            AudioSource.PlayClipAtPoint(shootingSound, transform.position);
+
             var shotPosition = new Vector3(transform.position.x, transform.position.y + yPadding, transform.position.z);
             var shot = Instantiate(lazerPrefab, shotPosition, Quaternion.identity);
             shot.GetComponent<Rigidbody2D>().velocity = new Vector2(0, baseLazerSpeed);

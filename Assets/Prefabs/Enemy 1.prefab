@@ -103,6 +103,19 @@ MonoBehaviour:
     type: 3}
   explosionPrefab: {fileID: 7056840774447532185, guid: 0ffd0893f79e92f49ae63cf3a1c31992,
     type: 3}
+  explosionLifetime: 0.5
+  shootingSounds:
+  - {fileID: 8300000, guid: 7d9c7ccad3f8d864f9c2dab36c9cb605, type: 3}
+  - {fileID: 8300000, guid: f1da4a5012663e640b71a898fc9c37c9, type: 3}
+  - {fileID: 8300000, guid: 2f1a5d75d4d7fe84283a6746c31309c1, type: 3}
+  - {fileID: 8300000, guid: e1cb1efc3fa5e364786fa85b3b7a7fdb, type: 3}
+  - {fileID: 8300000, guid: 063fe75fafc51ac4bb3a0b64954e1f45, type: 3}
+  - {fileID: 8300000, guid: 4fd212b2419e2cd429579782c4fd635b, type: 3}
+  - {fileID: 8300000, guid: 7ca53647bee275d46835ecef885ef8a3, type: 3}
+  - {fileID: 8300000, guid: 256585a0ec4b07e4185fb95b78a9207a, type: 3}
+  - {fileID: 8300000, guid: f9f993193fe350d4fbdc582955d44200, type: 3}
+  - {fileID: 8300000, guid: 774361887d807eb468d75ca045903bb6, type: 3}
+  deathSound: {fileID: 8300000, guid: 7d0311be2d2d2aa468d1e2f95fa8c00c, type: 3}
 --- !u!114 &1786344093559265516
 MonoBehaviour:
   m_ObjectHideFlags: 0

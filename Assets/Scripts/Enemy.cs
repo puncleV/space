@@ -3,14 +3,22 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("ship")]
     [SerializeField] int health = 100;
+    
+    [Header("shooting")]
     [SerializeField] float minTimeBetweenShots = 0.1f;
     [SerializeField] float maxTimeBetweenShots = 1f;
     [SerializeField] float baseLazerSpeed = 10f;
     [SerializeField] GameObject lazerPrefab;
+    
+    [Header("animation")]
     [SerializeField] GameObject explosionPrefab;
     [SerializeField] private float explosionLifetime = 0.5f;
-    
+
+    [Header("audio")]
+    [SerializeField] private AudioClip[] shootingSounds;
+    [SerializeField] private AudioClip deathSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,12 +35,23 @@ public class Enemy : MonoBehaviour
     {
         while (true)
         {
-            var shotPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-            var shot = Instantiate(lazerPrefab, shotPosition, Quaternion.identity);
-            shot.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -baseLazerSpeed);
+            launchProjectile();
 
+            if (shootingSounds.Length > 0) {
+                AudioSource.PlayClipAtPoint(shootingSounds[Random.Range(0, shootingSounds.Length)], transform.position);
+            } else {
+                Debug.LogError("No sound effects for shooting");
+            }
+            
             yield return new WaitForSeconds(Random.Range(minTimeBetweenShots, maxTimeBetweenShots));
         }
+    }
+
+    private void launchProjectile()
+    {
+        var shotPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        var shot = Instantiate(lazerPrefab, shotPosition, Quaternion.identity);
+        shot.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -baseLazerSpeed);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -61,6 +80,7 @@ public class Enemy : MonoBehaviour
 
     private void die()
     {
+        AudioSource.PlayClipAtPoint(deathSound, transform.position);
         explode();
         StopAllCoroutines();
         Destroy(gameObject);
