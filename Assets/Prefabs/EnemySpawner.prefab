@@ -48,4 +48,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b68540f898559fb4ab1a25be5443b21b, type: 2}
   - {fileID: 11400000, guid: 943ddf2a3fe761f41840c02ccfa88413, type: 2}
   - {fileID: 11400000, guid: 1b1393cac67cf0e408cf5331af3fba05, type: 2}
+  - {fileID: 11400000, guid: 5c61ec5ead1bf7c45a44dc7316acc95c, type: 2}
+  - {fileID: 11400000, guid: 94c7af140aaff0a409dcc0784d925736, type: 2}
+  - {fileID: 11400000, guid: 0d3b1d229f39735439ea7751dd1e065b, type: 2}
+  - {fileID: 11400000, guid: 5abbe7148697baa459c6e95eb2b0842e, type: 2}
+  - {fileID: 11400000, guid: 16f8b494e4276034888ec7b8a1ff21f4, type: 2}
   startWave: 0
+  loopedWaves: 1

@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  minTimeBetweenShots: 0.1
+  minTimeBetweenShots: 1
   maxTimeBetweenShots: 1.5
   baseLazerSpeed: 10
   lazerPrefab: {fileID: 7814146037449326059, guid: 10b5a454ea05624428aa2ea693fdc05f,

@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 7626794114950735342}
   - component: {fileID: 7626794114950735340}
   - component: {fileID: 1786344093559265516}
-  - component: {fileID: 8375390333537014547}
+  - component: {fileID: 6579526841336954839}
   m_Layer: 9
-  m_Name: Enemy
-  m_TagString: 0
+  m_Name: Enemy 5
+  m_TagString: 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 539d5db9e07087a4695d6d5dcd234a30, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b71a15334c91f24697c40c97f070aa9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,9 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 531adce3a7fc58445b4cf295972cfad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  minTimeBetweenShots: 1
-  maxTimeBetweenShots: 2
+  health: 300
+  minTimeBetweenShots: 0.5
+  maxTimeBetweenShots: 1
   baseLazerSpeed: 10
   lazerPrefab: {fileID: 7814146037449326059, guid: 10b5a454ea05624428aa2ea693fdc05f,
     type: 3}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   targetWaypointIndex: 0
---- !u!61 &8375390333537014547
+--- !u!61 &6579526841336954839
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
