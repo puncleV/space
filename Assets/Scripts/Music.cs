@@ -13,7 +13,7 @@ public class Music : MonoBehaviour
 
     private void SetUpSingleton()
     {
-        var instancesCount = FindObjectsOfType<Music>().Length;
+        var instancesCount = FindObjectsOfType(GetType()).Length;
 
         if (instancesCount > 1)
         {
