@@ -98,7 +98,7 @@ MonoBehaviour:
   xPadding: 1
   yPadding: 0.5
   health: 300
-  deathSound: {fileID: 8300000, guid: 7d0311be2d2d2aa468d1e2f95fa8c00c, type: 3}
+  deathSound: {fileID: 8300000, guid: 5708dbb5ec8b42b449fb7811352dfa23, type: 3}
   shootingSound: {fileID: 8300000, guid: f1da4a5012663e640b71a898fc9c37c9, type: 3}
   lazerPrefab: {fileID: 7814146037449326059, guid: b937b7e3ac6fb7a40b5becfd9587885e,
     type: 3}
