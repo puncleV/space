@@ -7,12 +7,17 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private float gameOverDelay = 1f;
     public void mainMenu()
     {
+        FindObjectOfType<GameState>().reset();
         SceneManager.LoadScene("Main Menu");
-
     }
 
     public void game()
     {
+        var gameState = FindObjectOfType<GameState>();
+        if (gameState)
+        {
+            gameState.reset();
+        }
         SceneManager.LoadScene("Game");
     }
     

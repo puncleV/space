@@ -1,10 +1,7 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 public class GameState : MonoBehaviour
 {
-    private int points = 0;
-    [SerializeField] Text scoreText;
+    private int points;
     private void Awake()
     {
         SetUpSingleton();
@@ -12,7 +9,7 @@ public class GameState : MonoBehaviour
 
     private void Start()
     {
-        scoreText.text = points.ToString();
+        points = 0;
     }
 
     private void SetUpSingleton()
@@ -32,12 +29,16 @@ public class GameState : MonoBehaviour
     
     public void reset()
     {
-        points = 0;
+        Destroy(gameObject);
     }
 
     public void addPoints(int points)
     {
         this.points += points;
-        scoreText.text = this.points.ToString();
+    }
+
+    public int getScore()
+    {
+        return points;
     }
 }
