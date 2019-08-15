@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
 {
     [Header("ship")]
     [SerializeField] int health = 100;
+    [SerializeField] int points = 100;
     
     [Header("shooting")]
     [SerializeField] float minTimeBetweenShots = 0.1f;
@@ -81,6 +82,7 @@ public class Enemy : MonoBehaviour
     private void die()
     {
         AudioSource.PlayClipAtPoint(deathSound, transform.position);
+        FindObjectOfType<GameState>().addPoints(points);
         explode();
         StopAllCoroutines();
         Destroy(gameObject);
