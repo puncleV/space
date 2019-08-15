@@ -24,6 +24,10 @@ public class Player : MonoBehaviour
 
     Coroutine fieringCoroutine;
     // Start is called before the first frame update
+    public int GetHealth()
+    {
+        return health;
+    }
     void Start()
     {
         setUpWorldBoundaries();
