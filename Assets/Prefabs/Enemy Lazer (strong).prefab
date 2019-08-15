@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 672337081189574354}
   - component: {fileID: 5181970240554082950}
   - component: {fileID: 6419085788222756858}
+  - component: {fileID: 3783881290328579825}
   m_Layer: 11
-  m_Name: Enemy Lazer (weak)
+  m_Name: Enemy Lazer (strong)
   m_TagString: enemy_laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c45bb978ef03df340a7c45bd143ba025, type: 3}
-  m_Color: {r: 0.12439854, g: 0.6117647, b: 0, a: 1}
+  m_Color: {r: 0.95129585, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -145,4 +146,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64953de7135bef4fa053bbe2bc353ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 200
+--- !u!114 &3783881290328579825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814146037449326059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d784c63b23ac3247bd4abb9f0309f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinSpeed: 180
